@@ -6,8 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-import com.mysql.cj.protocol.SocksProxySocketFactory;
-
 import model.Model;
 
 public class DBModel implements Model {
