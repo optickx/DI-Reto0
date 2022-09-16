@@ -6,11 +6,13 @@ import model.dao.*;
 
 public class ModelFactory {
 
-    // choose system from file.
-    private static ResourceBundle file = 
-        ResourceBundle.getBundle("resources.configuration");
-    private static String system 
-        = file.getString("SYSTEM").toUpperCase();
+    // choose system from file. 
+        ;
+    private static final String system 
+        = ResourceBundle
+                .getBundle("resources.configuration")
+                    .getString("SYSTEM")
+                        .toUpperCase();
 
     public static Model getAccess() {
         if (system.contains("DATABASE"))

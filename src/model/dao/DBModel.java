@@ -12,12 +12,11 @@ public class DBModel implements Model {
 
     private Connection con;
     // access to the database access credentials.
-    private ResourceBundle config = 
-        ResourceBundle
-        .getBundle("resources.database_access");
+    private final ResourceBundle config = 
+        ResourceBundle.getBundle("resources.database_access");
 
     // store the credentials in local Strings.
-    private String 
+    private final String 
         url = config.getString("URL"),
         user = config.getString("USER"),
         pass = config.getString("PASSWORD"),
@@ -45,7 +44,7 @@ public class DBModel implements Model {
     @Override
     public String getGreeting() {
         String greet = null;
-        ResultSet rs = null;
+        ResultSet rs;
         openConnection();
         try {
             rs = con
