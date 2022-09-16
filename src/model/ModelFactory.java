@@ -10,7 +10,7 @@ public class ModelFactory {
         ;
     private static final String system 
         = ResourceBundle
-                .getBundle("resources.configuration")
+                .getBundle("resources.data_system")
                     .getString("SYSTEM")
                         .toUpperCase();
 
@@ -21,6 +21,5 @@ public class ModelFactory {
             return new FileModel();
         return null;
         // TODO: exception?
-    }
-    
+    }   
 }
