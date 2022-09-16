@@ -8,12 +8,15 @@ public class FileModel implements Model {
 
     // access to the configuration file.
     private ResourceBundle file = 
-        ResourceBundle.getBundle("resources.greet");
-    private String greetToString 
-        = file.getString("GREET");
+        ResourceBundle
+            .getBundle("resources.greet");
 
     @Override
     public String getGreeting() {
-        return greetToString;
+        try {
+            return file.getString("GREET");
+        } catch (Exception e) {
+            return null;
+        }
     }
 }

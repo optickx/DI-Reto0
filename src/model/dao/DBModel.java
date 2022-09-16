@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+import com.mysql.cj.protocol.SocksProxySocketFactory;
+
 import model.Model;
 
 public class DBModel implements Model {
@@ -13,7 +15,8 @@ public class DBModel implements Model {
     private Connection con;
     // access to the database access credentials.
     private final ResourceBundle config = 
-        ResourceBundle.getBundle("resources.database_access");
+        ResourceBundle
+            .getBundle("resources.database_access");
 
     // store the credentials in local Strings.
     private final String 
@@ -43,21 +46,21 @@ public class DBModel implements Model {
 
     @Override
     public String getGreeting() {
-        String greet = null;
         ResultSet rs;
+        String greet = null;
         openConnection();
         try {
             rs = con
-            .prepareStatement("select * from " + table + ";")
-            .executeQuery();
+                .prepareStatement("select * from " + table + ";")
+                    .executeQuery();
             // do not forget to check the ResultSet
-                if (rs.next())
-                    greet = rs
-                    .getString(column);
+            System.out.println(rs.getMetaData());
+            if (rs.next())
+                greet = rs.getString(column);
+            closeConnection();
         } catch (SQLException sqle) {
-            // TODO: handle exception
+            sqle.printStackTrace();
         }
-        closeConnection();
         return greet;
     }
 }

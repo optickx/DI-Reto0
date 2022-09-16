@@ -7,8 +7,8 @@ public class Controller {
     public static void run() {
         String greet = 
             ModelFactory
-            .getAccess()
-                .getGreeting();
+                .getAccess()
+                    .getGreeting();
 
         System.out.println(greet);
     }

@@ -20,7 +20,9 @@ public class ModelFactory {
         if (system.contains("FILE"))
             return new FileModel();
         return null;
-        // TODO: exception?
+            
+              //throw ModelTypeNotAllowed();
+        // TODO: exception? acabar clase
     }
     
 }
