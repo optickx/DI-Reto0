@@ -29,5 +29,5 @@ hs_err_pid*
 
 #exclude weird files from vscode and netbeans
 .vscode/*
-nbproject/*
+nbproject/
 sql/*
