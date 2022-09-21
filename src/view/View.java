@@ -3,5 +3,5 @@ package view;
 public interface View {
     /**Returns a String that 
      * contains the value */
-    public void showGreeting();
+    public void showGreeting(String greeting);
 }

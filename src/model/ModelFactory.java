@@ -8,16 +8,16 @@ public class ModelFactory {
 
     // choose system from file. 
         ;
-    private static final String system 
+    private static final String datamode 
         = ResourceBundle
                 .getBundle("resources.configuration")
-                    .getString("SYSTEM")
+                    .getString("DATAMODE")
                         .toUpperCase();
 
     public static Model getAccess() {
-        if (system.contains("DATABASE"))
+        if (datamode.contains("DATABASE"))
             return new DBModel();
-        if (system.contains("FILE"))
+        if (datamode.contains("FILE"))
             return new FileModel();
         return null;
         // TODO: exception?

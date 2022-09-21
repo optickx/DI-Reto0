@@ -1,6 +1,7 @@
 package controller;
 
 import model.ModelFactory;
+import view.ViewFactory;
 
 public class Controller {
     
@@ -9,7 +10,8 @@ public class Controller {
             ModelFactory
             .getAccess()
                 .getGreeting();
-
-        System.out.println(greet);
+       ViewFactory
+            .getAccess()
+                .showGreeting(greet);
     }
 }
