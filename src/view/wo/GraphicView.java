@@ -4,14 +4,17 @@
  * and open the template in the editor.
  */
 package view.wo;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import view.View;
 
 /**
  *
  * @author 2dam
  */
-public class GraphicView extends javax.swing.JFrame implements View{
-   
+public class GraphicView extends javax.swing.JFrame implements View {
+
     /**
      * Creates new form GraphicView
      */
@@ -39,16 +42,16 @@ public class GraphicView extends javax.swing.JFrame implements View{
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(150, 150, 150)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(153, Short.MAX_VALUE))
+                .addGap(142, 142, 142)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(157, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(116, 116, 116)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(129, Short.MAX_VALUE))
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(127, Short.MAX_VALUE))
         );
 
         pack();
@@ -61,10 +64,13 @@ public class GraphicView extends javax.swing.JFrame implements View{
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
-
     @Override
     public void showGreeting(String greeting) {
-        jLabel1.setText(greeting);
-        jLabel1.setVisible(true);
+        JPanel panel = new JPanel();
+        JLabel jLabel = new JLabel(greeting, JLabel.CENTER);
+        jLabel.setOpaque(true);
+        jLabel.setVisible(true);
+        jLabel.setText(greeting);
+        panel.add(jLabel);
     }
 }
