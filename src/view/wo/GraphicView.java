@@ -6,7 +6,6 @@
 package view.wo;
 
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import view.View;
 
 /**
@@ -15,6 +14,8 @@ import view.View;
  */
 public class GraphicView extends javax.swing.JFrame implements View {
 
+        private JLabel jLabel;
+        private GraphicView graphicView;
     /**
      * Creates new form GraphicView
      */
@@ -31,27 +32,17 @@ public class GraphicView extends javax.swing.JFrame implements View {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel1.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(142, 142, 142)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(157, Short.MAX_VALUE))
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(116, 116, 116)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(127, Short.MAX_VALUE))
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
         pack();
@@ -62,15 +53,15 @@ public class GraphicView extends javax.swing.JFrame implements View {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
     @Override
     public void showGreeting(String greeting) {
-        JPanel panel = new JPanel();
-        JLabel jLabel = new JLabel(greeting, JLabel.CENTER);
-        jLabel.setOpaque(true);
+        graphicView = new GraphicView();
+        graphicView.setBounds(0,0,700,500);
+        graphicView.setVisible(true);
+        jLabel = new JLabel(greeting);
+        jLabel.setBounds(10,20,300,30);
         jLabel.setVisible(true);
-        jLabel.setText(greeting);
-        panel.add(jLabel);
+        graphicView.getContentPane().add(jLabel);
     }
 }

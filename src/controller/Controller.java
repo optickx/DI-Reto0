@@ -1,17 +1,14 @@
 package controller;
 
-import model.ModelFactory;
-import view.ViewFactory;
+import model.Model;
+import view.View;
 
 public class Controller {
-    
-    public static void run() {
+    public void run(Model pModel, View pView) {
         String greet = 
-            ModelFactory
-            .getAccess()
+            pModel
                 .getGreeting();
-       ViewFactory
-            .getAccess()
+            pView
                 .showGreeting(greet);
     }
 }
