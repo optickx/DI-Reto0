@@ -60,7 +60,7 @@ public class GraphicView extends javax.swing.JFrame implements View {
         graphicView.setBounds(0,0,700,500);
         graphicView.setVisible(true);
         jLabel = new JLabel(greeting);
-        jLabel.setBounds(10,20,300,30);
+        jLabel.setBounds(150,200,400,30);
         jLabel.setVisible(true);
         graphicView.getContentPane().add(jLabel);
     }
