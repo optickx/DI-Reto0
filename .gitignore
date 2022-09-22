@@ -18,15 +18,3 @@
 *.zip
 *.tar.gz
 *.rar
-
-# Unused NetBeans elements
-*.xml
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-/bin/
-/build/
-
-#exclude weird files from vscode and netbeans
-.vscode/*
-sql/*
