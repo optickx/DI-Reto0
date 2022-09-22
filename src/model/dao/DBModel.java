@@ -2,7 +2,6 @@ package model.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -14,7 +13,7 @@ public class DBModel implements Model {
     private Connection con;
     // access to the database access credentials.
     private final ResourceBundle config = 
-        ResourceBundle.getBundle("resources.database_credentials");
+        ResourceBundle.getBundle("resources.database_access");
 
     // store the credentials in local Strings.
     private final String 
@@ -25,6 +24,7 @@ public class DBModel implements Model {
         column = config.getString("COLUMN");
 
     private void openConnection() {
+        con = null;
         try {
             con = DriverManager
                 .getConnection(url, user, pass);
@@ -44,13 +44,12 @@ public class DBModel implements Model {
     @Override
     public String getGreeting() {
         String greet = null;
-        PreparedStatement stmt;
         ResultSet rs;
         openConnection();
         try {
-            stmt = con
-            .prepareStatement("select * from " + table + ";");
-            rs = stmt.executeQuery();
+            rs = con
+            .prepareStatement("select * from " + table + ";")
+            .executeQuery();
             // do not forget to check the ResultSet
                 if (rs.next())
                     greet = rs
