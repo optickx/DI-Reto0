@@ -11,7 +11,7 @@ public class ViewFactory {
                     .getString("VIEWMODE")
                         .toUpperCase();
 
-    public static View getAccess() {
+    public static View getView() {
         if (viewmode.contains("GRAPHIC"))
             return new GraphicView();
         if (viewmode.contains("TEXT"))

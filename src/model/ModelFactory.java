@@ -14,7 +14,7 @@ public class ModelFactory {
                     .getString("DATAMODE")
                         .toUpperCase();
 
-    public static Model getAccess() {
+    public static Model getModel() {
         if (datamode.contains("DATABASE"))
             return new DBModel();
         if (datamode.contains("FILE"))
