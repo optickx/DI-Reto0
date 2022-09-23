@@ -10,7 +10,7 @@ import model.Model;
 
 public class DBModel implements Model {
 
-    private Connection con;
+    protected Connection con;
     // access to the database access credentials.
     private final ResourceBundle config = 
         ResourceBundle.getBundle("resources.database_access");
@@ -19,11 +19,12 @@ public class DBModel implements Model {
     private final String 
         url = config.getString("URL"),
         user = config.getString("USER"),
-        pass = config.getString("PASSWORD"),
+        pass = config.getString("PASSWORD");
+    protected final String
         table = config.getString("TABLE"),
         column = config.getString("COLUMN");
 
-    private void openConnection() {
+    protected void openConnection() {
         con = null;
         try {
             con = DriverManager
@@ -33,7 +34,7 @@ public class DBModel implements Model {
         }
     }
 
-    private void closeConnection() {
+    protected void closeConnection() {
         try {
             con.close();
         } catch (SQLException sqle) {
