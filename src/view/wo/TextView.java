@@ -7,5 +7,4 @@ public class TextView implements View{
     public void showGreeting(String greeting) {
         System.out.println(greeting);
     }
-    
 }

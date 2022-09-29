@@ -6,21 +6,25 @@ import model.dao.*;
 
 public class ModelFactory {
 
-    // choose system from file. 
-        ;
-    private static final String datamode 
-        = ResourceBundle
-                .getBundle("resources.configuration")
+    /**
+     * obtains system showing mode (Database,File)
+     */
+    private static final String datamode
+            = ResourceBundle
+                    .getBundle("resources.configuration")
                     .getString("DATAMODE")
-                        .toUpperCase();
+                    .toUpperCase();
 
+    /***/
     public static Model getModel() {
-        if (datamode.contains("DATABASE"))
+        if (datamode.contains("DATABASE")) {
             return new DBModel();
-        if (datamode.contains("FILE"))
+        }
+        if (datamode.contains("FILE")) {
             return new FileModel();
+        }
         return null;
         // TODO: exception?
     }
-    
+
 }
