@@ -22,3 +22,6 @@
 /nbproject/*
 /build/
 /dist/
+
+*.xml
+*.mf
