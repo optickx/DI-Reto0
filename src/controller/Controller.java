@@ -8,10 +8,10 @@ public class Controller {
      * @param pView is a View interface.
      */
     public void run(Model pModel, View pView) {
-        String greet = 
-            pModel
+        String greet = pModel
                 .getGreeting();
-            pView
+        
+        pView
                 .showGreeting(greet);
     }
 }

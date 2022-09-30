@@ -1,7 +1,6 @@
 package view;
 
 public interface View {
-    /**Returns a String that 
-     * contains the value */
+    /** @param greeting is the String that will be shown*/
     public void showGreeting(String greeting);
 }

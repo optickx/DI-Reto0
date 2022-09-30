@@ -6,8 +6,7 @@ import model.dao.*;
 
 public class ModelFactory {
 
-    /**
-     * obtains system showing mode (Database,File)
+    /**obtains view system (Database,File)
      */
     private static final String datamode
             = ResourceBundle
@@ -15,7 +14,8 @@ public class ModelFactory {
                     .getString("DATAMODE")
                     .toUpperCase();
 
-    /***/
+    /**@return instanced interface
+     */
     public static Model getModel() {
         if (datamode.contains("DATABASE")) {
             return new DBModel();
@@ -24,7 +24,5 @@ public class ModelFactory {
             return new FileModel();
         }
         return null;
-        // TODO: exception?
     }
-
 }
